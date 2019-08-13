@@ -3,7 +3,7 @@ const exec = require('child_process').exec;
 
 const app = express();
 
-let port = 11001;
+let port = 12345;
 
 //静态文件处理, HTTP对/static的请求都映射到相对目录的 /dist/static
 app.use('/axure', express.static('axure/'));
