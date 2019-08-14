@@ -9,14 +9,11 @@ let port = 12345;
 app.use('/axure', express.static('axure/'));
 
 app.get('/pull', (req, res) => {
-    console.info(req.originalUrl);
-    if(req.originalUrl === 'pull') {
-        exec('./pull.sh', (err) => {
+    if(req.originalUrl === '/pull') {
+        exec('git pull', (err) => {
             if(err) {
-                console.info('aaa');
                 res.status(500).send('拉取失败');
             } else {
-                console.info('bbb');
                 res.status(200).send('拉取成功');
             }
         });
